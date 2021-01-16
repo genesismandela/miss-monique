@@ -1,0 +1,62 @@
+// Text Align
+%alignCenter {
+	text-align: center;
+}
+.alignCenter {
+	text-align: center;
+}
+.alignLeft {
+	text-align: left;
+}
+
+// Effects for links
+%infolinks {
+	text-decoration: none;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	padding-bottom: 2px;
+}
+
+// // Text Shadow
+// %textshadow {
+//     text-shadow: 2px 2px $color-black-light;
+// }
+// // Box Shadow
+// %boxFullShadowBlack {
+//     box-shadow: 1px 1px 2px $color-black, 0 0 25px $color-home-grey;
+// }
+
+// // Box Shadow
+// %boxShadowWhite {
+//     box-shadow: 1px 1px 2px $color-black, 0 0 25px $color-home-white;
+// }
+
+// Text Align
+%alignCenter {
+	text-align: center;
+}
+.alignCenter {
+	text-align: center;
+}
+.alignLeft {
+	text-align: left;
+}
+
+// Flex Column
+%FlexCol {
+	display: flex;
+	flex-direction: column;
+}
+
+// Header Height
+%BigScreenHeight {
+	@media only screen and (min-width: $bp-tablet) {
+		height: 56rem;
+	}
+}
+
+%SmallScreenHeight {
+	@media only screen and (max-width: $bp-tablet) {
+		height: 42rem;
+	}
+}

@@ -1,0 +1,50 @@
+.heading-2 {
+	@include fluid-font(36px, 84px);
+	font-family: $font-main;
+	line-height: 1.5;
+	letter-spacing: 1.4px;
+	padding: 0rem 2rem;
+	position: relative;
+
+	&::after {
+		content: "";
+		height: 0.1rem;
+		position: absolute;
+
+		bottom: 0;
+
+		width: 3.5rem;
+	}
+
+	&--dark {
+		color: $dark;
+
+		&::after {
+			background-color: $dark;
+		}
+	}
+
+	&--light {
+		color: $light;
+
+		&::after {
+			background-color: $light;
+		}
+	}
+}
+
+.heading-3 {
+	@include fluid-font(28px, 44px);
+	font-family: $font-main;
+	color: $light;
+	line-height: 1.7;
+	letter-spacing: 1.6px;
+}
+
+.heading-4 {
+	@include fluid-font(15px, 18px);
+	font-family: $font-complement;
+	color: $light;
+	line-height: 1.7;
+	letter-spacing: 1.6px;
+}

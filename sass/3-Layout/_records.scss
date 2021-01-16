@@ -1,0 +1,138 @@
+.records {
+	padding: 15rem 0.5rem;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: $light;
+
+	&__singles {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-row: 1fr 1fr;
+		grid-gap: 50px;
+		justify-items: center;
+		padding: 5rem 0.5rem;
+
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		@media only screen and (max-width: 960px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media only screen and (max-width: 600px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__single {
+		position: relative;
+		opacity: 0.5;
+		cursor: pointer;
+
+		transition: all 1s;
+
+		display: flex;
+		justify-content: center;
+
+		&:hover {
+			opacity: 1;
+
+			.heading-4 {
+				opacity: 1;
+				animation: dropUp 1s ease-in forwards;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				display: none;
+			}
+		}
+
+		.heading-4 {
+			position: absolute;
+			bottom: -10%;
+			@include fluid-font(18px, 24px);
+			z-index: 9999;
+			color: $color-white;
+			opacity: 0;
+			text-shadow: 1px 1px $light-dark;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				height: 2px;
+				width: 2rem;
+				background-color: $light;
+			}
+
+			&::before {
+				left: 0%;
+				transform: translate(-100%, -50%);
+			}
+			&::after {
+				right: 0%;
+				transform: translate(100%, -50%);
+			}
+		}
+
+		&__link {
+			opacity: 0.4;
+
+			&:hover {
+				opacity: 1;
+			}
+			&--1 {
+				position: absolute;
+				left: 0.5rem;
+				bottom: 0.5rem;
+				width: 20%;
+			}
+
+			&--2 {
+				position: absolute;
+				right: 0.5rem;
+				bottom: 0.5rem;
+				width: 20%;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__img {
+		border-radius: 5px;
+		max-width: 30rem;
+		max-height: 30rem;
+	}
+
+	&__btn-show-more {
+		@include fluid-font(18px, 22px);
+		background-color: transparent;
+		border: 1px solid $green-light;
+		border-radius: 5px;
+		color: $dark;
+		cursor: pointer;
+
+		padding: 1rem;
+		display: none;
+
+		&:hover {
+			border-color: $red-light;
+		}
+
+		@media only screen and(max-width: 600px) {
+			display: inline-block;
+		}
+	}
+}

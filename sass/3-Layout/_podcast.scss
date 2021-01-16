@@ -1,0 +1,60 @@
+.mimo-podcast {
+	display: flex;
+	flex-direction: column;
+
+	padding: 15rem 0;
+
+	background-color: $light;
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 4rem;
+		padding: 0 1rem 4rem 1rem;
+		margin: 5rem 0;
+
+		position: relative;
+		width: 100%;
+
+		.btn-slide {
+			cursor: pointer;
+			font-size: 4rem;
+			background: transparent;
+			border: none;
+			color: $light-dark;
+
+			position: absolute;
+			display: none;
+
+			&--back {
+				left: 1rem;
+			}
+
+			&--next {
+				right: 1rem;
+			}
+		}
+
+		@media only screen and (max-width: 960px) {
+		}
+	}
+
+	&__box {
+		margin: 0 1.25rem;
+		padding: 1.25rem;
+
+		@media only screen and (max-width: 960px) {
+		}
+	}
+
+	&__video {
+		border: 1px solid $red-light;
+		border-radius: 5px;
+		min-width: 300px;
+
+		@media only screen and (max-width: 960px) {
+		}
+	}
+}

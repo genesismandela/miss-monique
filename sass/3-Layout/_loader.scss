@@ -1,0 +1,95 @@
+.loader {
+	background-color: $dark;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	z-index: 9999;
+
+	transition: all 2s;
+	-webkit-transition: all 1.5s;
+	-moz-transition: all 2s;
+	// animation: fadeOut 5s linear;
+	// -webkit-animation: fadeOut 5s linear;
+	// -moz-animation: fadeOut 5s linear;
+
+	&__text {
+		@include fluid-font(22px, 35px);
+		color: $light;
+		font-family: $font-main;
+		margin-bottom: 3rem;
+	}
+
+	&__wheel {
+		width: 5rem;
+		height: 5rem;
+
+		border-radius: 50%;
+
+		background: $green-dark;
+		background: -moz-linear-gradient(
+			left,
+			$green-dark 10%,
+			rgba(255, 255, 255, 0) 42%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			$green-dark 10%,
+			rgba(255, 255, 255, 0) 42%
+		);
+		background: -o-linear-gradient(
+			left,
+			$green-dark 10%,
+			rgba(255, 255, 255, 0) 42%
+		);
+		background: -ms-linear-gradient(
+			left,
+			$green-dark 10%,
+			rgba(255, 255, 255, 0) 42%
+		);
+		background: linear-gradient(
+			to right,
+			$green-dark 10%,
+			rgba(255, 255, 255, 0) 42%
+		);
+
+		position: relative;
+
+		-webkit-animation: loader 1.4s infinite linear;
+		animation: loader 1.4s infinite linear;
+		-webkit-transform: translateZ(0);
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+
+		&::before {
+			width: 50%;
+			height: 50%;
+			background: $green-dark;
+			border-radius: 100% 0 0 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+		}
+
+		&::after {
+			background: $dark;
+			width: 75%;
+			height: 75%;
+			border-radius: 50%;
+			content: "";
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
