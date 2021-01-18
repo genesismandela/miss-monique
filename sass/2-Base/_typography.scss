@@ -3,7 +3,6 @@
 	font-family: $font-main;
 	line-height: 1.5;
 	letter-spacing: 1.4px;
-	padding: 0rem 2rem;
 	position: relative;
 
 	&::after {
@@ -34,7 +33,7 @@
 }
 
 .heading-3 {
-	@include fluid-font(28px, 44px);
+	@include fluid-font(28px, 36px);
 	font-family: $font-main;
 	color: $light;
 	line-height: 1.7;
@@ -42,9 +41,9 @@
 }
 
 .heading-4 {
-	@include fluid-font(15px, 18px);
+	@include fluid-font(18px, 30px);
 	font-family: $font-complement;
-	color: $light;
+	color: $red-light;
 	line-height: 1.7;
 	letter-spacing: 1.6px;
 }

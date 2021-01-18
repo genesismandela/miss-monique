@@ -2,7 +2,11 @@
 	display: flex;
 	flex-direction: column;
 
-	padding: 15rem .5rem;
+	padding: 15rem 0.5rem;
+
+	> .heading-2 {
+		padding: 0rem 2rem;
+	}
 
 	&__pics {
 		display: grid;
@@ -10,19 +14,16 @@
 		grid-template-rows: repeat(8, 20vh);
 		grid-gap: 1rem;
 
-		padding: 5rem .5rem;
+		padding: 5rem 0.5rem;
 
 		margin: 0 auto;
-
 	}
-
 
 	&__img {
 		width: 100%;
 		height: 100%;
-        object-fit: cover;
+		object-fit: cover;
 		display: block;
-
 
 		&:nth-child(1) {
 			grid-column: 1/3;

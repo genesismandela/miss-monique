@@ -91,3 +91,23 @@
 		opacity: 1;
 	}
 }
+
+@keyframes dropdown {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: auto;
+	}
+}
+
+@keyframes growDown {
+	0% {
+		transform: scaleY(0);
+	}
+
+	100% {
+		transform: scaleY(1);
+	}
+}

@@ -7,6 +7,15 @@
 
 	background-color: $light;
 
+	&__container {
+		max-width: 1350px;
+		margin: 0 auto;
+
+		.heading-2 {
+			margin: 0 0.75rem;
+		}
+	}
+
 	&__singles {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -16,8 +25,6 @@
 		padding: 5rem 0.5rem;
 
 		position: relative;
-		max-width: 1200px;
-		margin: 0 auto;
 
 		@media only screen and (max-width: 960px) {
 			grid-template-columns: repeat(2, 1fr);
@@ -41,10 +48,10 @@
 		&:hover {
 			opacity: 1;
 
-			.heading-4 {
-				opacity: 1;
-				animation: dropUp 1s ease-in forwards;
-			}
+			// .heading-4 {
+			// 	opacity: 1;
+			// 	animation: dropUp 1s ease-in forwards;
+			// }
 		}
 
 		@media only screen and (max-width: 600px) {
