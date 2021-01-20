@@ -40,6 +40,7 @@ const body = document.body;
 
 openNavMenu.addEventListener("click", function () {
 	if (navMenu.style.visibility === "visible") {
+		body.style.overflow = "scroll";
 		navMenu.style.visibility = "hidden";
 		openNavMenu.classList.toggle("is-active");
 		console.log("closed");
@@ -98,7 +99,26 @@ const goToSlide = function (slide) {
 		(s, i) => (s.style.transform = `translateX(${150 * (i - slide)}%`),
 	);
 };
-goToSlide(0);
+
+const ballBox = document.querySelector(".mimo-podcast__youtube__nav__balls");
+
+const createBalls = function (slide) {
+	videoSlides.forEach(function (s, i) {
+		const ball = `<button class="ball ball-active" data-slide="${i}"></button>`;
+
+		ballBox.insertAdjacentHTML("afterbegin", ball);
+	});
+};
+
+const activateBall = function (slide) {
+	document
+		.querySelectorAll(".ball")
+		.forEach((ball) => ball.classList.remove("ball-active"));
+
+	document
+		.querySelector(`.ball[data-slide="${slide}"]`)
+		.classList.add("ball-active");
+};
 
 // Function to make the Right Arrow work to slide between videos
 const nextSlide = function () {
@@ -108,6 +128,7 @@ const nextSlide = function () {
 		currentSlide++;
 	}
 	goToSlide(currentSlide);
+	activateBall(currentSlide);
 	swapTitle();
 };
 
@@ -119,8 +140,11 @@ const prevSlide = function () {
 		currentSlide--;
 	}
 	goToSlide(currentSlide);
+	activateBall(currentSlide);
 	swapTitle();
 };
+
+let podcastNumber = 24;
 
 const swapTitle = function () {
 	if (currentSlide === 0) {
@@ -135,3 +159,10 @@ const swapTitle = function () {
 
 goNext.addEventListener("click", nextSlide);
 goBack.addEventListener("click", prevSlide);
+
+const init = function () {
+	goToSlide(0);
+	createBalls();
+	activateBall(0);
+};
+init();

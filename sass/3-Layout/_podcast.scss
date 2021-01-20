@@ -84,8 +84,33 @@
 		}
 
 		&__nav {
+			@include flex(row, space-around, center);
 			position: relative;
 			margin-top: 1rem;
+
+			&__balls {
+				display: flex;
+				flex-direction: row-reverse;
+				width: 100%;
+				height: 1.5rem;
+				text-align: center;
+
+				> .ball {
+					align-self: center;
+					height: 0.75rem;
+					width: 0.75rem;
+
+					border: none;
+					border-radius: 50%;
+					margin: 0 0.5rem;
+				}
+
+				.ball-active {
+					background-color: $red-light;
+					height: 0.95rem;
+					width: 0.95rem;
+				}
+			}
 
 			&__btn {
 				background-color: transparent;
