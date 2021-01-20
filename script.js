@@ -1,9 +1,4 @@
 "use strict";
-// Initialize LAZY LOAD
-(function () {
-	// Initialize
-	var bLazy = new Blazy();
-})();
 
 ///////////////
 // HEADER BACKGROUND SLIDER
