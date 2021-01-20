@@ -119,7 +119,8 @@ img {
   color: #e4e4e4;
   font-family: "Nanum Gothic Coding", monospace;
   line-height: 1.4;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  max-width: 75rem; }
   @media screen and (max-width: 320px) {
     .text {
       font-size: 16px; } }
@@ -280,6 +281,7 @@ img {
   .header__wrapper {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     height: 100vh;
     position: relative; }
   .header__navigation {
@@ -363,7 +365,8 @@ img {
     width: 100%;
     filter: brightness(200%);
     z-index: 8888;
-    position: absolute; }
+    position: absolute;
+    bottom: 0; }
     .header__features__text {
       padding: 0 3rem;
       display: grid;
@@ -496,6 +499,8 @@ img {
     @media only screen and (max-width: 1024px) {
       .mimo-podcast__description {
         margin-bottom: 5rem; } }
+    .mimo-podcast__description .text {
+      text-align: left; }
   .mimo-podcast__youtube {
     position: relative;
     min-height: 500px;
@@ -671,8 +676,7 @@ img {
     height: 250px;
     margin: 3rem 2.5rem;
     max-width: 25rem;
-    padding: 1rem;
-    text-align: center; }
+    padding: 1rem; }
     .siona-records__features__text > .fas {
       font-size: 5rem;
       margin-bottom: 1.5rem; }

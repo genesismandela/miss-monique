@@ -36,12 +36,15 @@ const NavMenuPhones = function () {
 };
 NavMenuPhones();
 
+const body = document.body;
+
 openNavMenu.addEventListener("click", function () {
 	if (navMenu.style.visibility === "visible") {
 		navMenu.style.visibility = "hidden";
 		openNavMenu.classList.toggle("is-active");
 		console.log("closed");
 	} else {
+		body.style.overflow = "hidden";
 		navMenu.style.visibility = "visible";
 		openNavMenu.classList.toggle("is-active");
 		console.log("opened");
