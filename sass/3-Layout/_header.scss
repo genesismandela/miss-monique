@@ -4,6 +4,7 @@
 
 	background-image: url(../img/miss_monique_background_1.jpg);
 	@include bgImages;
+	position: relative;
 
 	&::after {
 		content: "";
@@ -117,7 +118,6 @@
 		font-family: $font-complement;
 		display: flex;
 		flex-direction: column;
-		align-self: flex-end;
 		width: 100%;
 		filter: brightness(200%);
 		z-index: 8888;

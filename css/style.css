@@ -269,7 +269,8 @@ img {
   background-image: url(../img/miss_monique_background_1.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  position: relative; }
   .header::after {
     content: "";
     position: absolute;
@@ -361,7 +362,6 @@ img {
     font-family: "Amatic SC", cursive;
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
     width: 100%;
     filter: brightness(200%);
     z-index: 8888;
