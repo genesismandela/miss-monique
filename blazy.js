@@ -368,3 +368,9 @@
         };
     }
 });
+
+// Initialize LAZY LOAD
+(function () {
+	// Initialize
+	var bLazy = new Blazy();
+})();
