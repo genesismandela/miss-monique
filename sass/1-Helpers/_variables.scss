@@ -23,3 +23,8 @@ $bp-phone: 37.5em; // 600px
 $font-main: "Nanum Gothic Coding", monospace;
 $font-second: "PT Mono", monospace;
 $font-complement: "Amatic SC", cursive;
+
+// Padding
+%containerPadding {
+	padding: 15rem 0.5rem;
+}

@@ -1,0 +1,49 @@
+.siona-records {
+	@extend %containerPadding;
+
+	&__features {
+		@include flex(row, space-evenly, flex-start);
+		flex-wrap: wrap;
+		margin: 15rem 0;
+
+		&__text {
+			@include flex(column, center, center);
+			border: 1px solid $dark-light;
+			background-color: $light-dark;
+			border-radius: 5px;
+			color: $dark !important;
+			height: 250px;
+			margin: 3rem 2.5rem;
+			max-width: 25rem;
+			padding: 1rem;
+			text-align: center;
+
+			> .fas {
+				font-size: 5rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	&__supported {
+		display: flex;
+		flex-direction: column;
+		margin: 5rem auto;
+		max-height: 5rem;
+		max-width: 100rem;
+		width: 85%;
+		overflow: hidden;
+
+		&__slider {
+			@include flex(row, space-evenly, center);
+			width: calc(250px * 8);
+
+			&__img {
+				animation: scroll 30s linear infinite;
+				margin: 0 2rem;
+				max-height: 5rem;
+				width: 250px;
+			}
+		}
+	}
+}

@@ -1,9 +1,4 @@
-// @keyframes moveGradient {
-//     50% {
-//         background-position: 100% 50%;
-//     }
-// }
-
+// Animation Loader
 @-webkit-keyframes loader {
 	0% {
 		-webkit-transform: rotate(0deg);
@@ -25,89 +20,104 @@
 	}
 }
 
-@keyframes fadeOut {
+// Animation Slider
+@keyframes scroll {
 	0% {
-		opacity: 1;
+		transform: translateX(0);
 	}
-
-	50% {
-		opacity: 1;
-	}
-
 	100% {
-		opacity: 0;
+		transform: translateX(calc(-250px * 4));
 	}
 }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
+// @keyframes fadeOut {
+// 	0% {
+// 		opacity: 1;
+// 	}
 
-	50% {
-		opacity: 0.6;
-	}
+// 	50% {
+// 		opacity: 1;
+// 	}
 
-	100% {
-		opacity: 1;
-	}
-}
+// 	100% {
+// 		opacity: 0;
+// 	}
+// }
 
-@keyframes fadeUp {
-	0% {
-		transform: translateY(-50%);
-		opacity: 0;
-	}
+// @keyframes fadeIn {
+// 	0% {
+// 		opacity: 0;
+// 	}
 
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
+// 	50% {
+// 		opacity: 0.6;
+// 	}
 
-@keyframes fadeDown {
-	0% {
-		transform: translateY(50%);
-		opacity: 0;
-	}
+// 	100% {
+// 		opacity: 1;
+// 	}
+// }
 
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
+// @keyframes fadeUp {
+// 	0% {
+// 		transform: translateY(-50%);
+// 		opacity: 0;
+// 	}
 
-@keyframes dropUp {
-	0% {
-		opacity: 0;
-	}
+// 	100% {
+// 		transform: translateY(0);
+// 		opacity: 1;
+// 	}
+// }
 
-	30% {
-		opacity: 0;
-	}
+// @keyframes fadeDown {
+// 	0% {
+// 		transform: translateY(50%);
+// 		opacity: 0;
+// 	}
 
-	100% {
-		bottom: 10%;
-		opacity: 1;
-	}
-}
+// 	100% {
+// 		transform: translateY(0);
+// 		opacity: 1;
+// 	}
+// }
 
-@keyframes dropdown {
-	0% {
-		height: 0;
-	}
+// @keyframes dropUp {
+// 	0% {
+// 		opacity: 0;
+// 	}
 
-	100% {
-		height: auto;
-	}
-}
+// 	30% {
+// 		opacity: 0;
+// 	}
 
-@keyframes growDown {
-	0% {
-		transform: scaleY(0);
-	}
+// 	100% {
+// 		bottom: 10%;
+// 		opacity: 1;
+// 	}
+// }
 
-	100% {
-		transform: scaleY(1);
-	}
-}
+// @keyframes dropdown {
+// 	0% {
+// 		height: 0;
+// 	}
+
+// 	100% {
+// 		height: auto;
+// 	}
+// }
+
+// @keyframes growDown {
+// 	0% {
+// 		transform: scaleY(0);
+// 	}
+
+// 	100% {
+// 		transform: scaleY(1);
+// 	}
+// }
+// @keyframes moveGradient {
+//     50% {
+//         background-position: 100% 50%;
+//     }
+// }

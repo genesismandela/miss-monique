@@ -1,9 +1,11 @@
+// Main sections Headings
 .heading-2 {
 	@include fluid-font(36px, 84px);
 	font-family: $font-main;
 	line-height: 1.5;
 	letter-spacing: 1.4px;
 	position: relative;
+	padding: 0rem 2rem;
 
 	&::after {
 		content: "";
@@ -32,18 +34,31 @@
 	}
 }
 
+// Heading Supported by ...
 .heading-3 {
-	@include fluid-font(28px, 36px);
+	@include fluid-font(22px, 36px);
 	font-family: $font-main;
-	color: $light;
+	color: $dark;
 	line-height: 1.7;
 	letter-spacing: 1.6px;
+	text-align: center;
+	padding: 0 2rem;
 }
 
+// Heading MiMo Podcast nº
 .heading-4 {
 	@include fluid-font(18px, 30px);
 	font-family: $font-complement;
 	color: $red-light;
 	line-height: 1.7;
 	letter-spacing: 1.6px;
+}
+
+// Normal Text
+.text {
+	@include fluid-font(16px, 24px);
+	color: $light;
+	font-family: $font-main;
+	line-height: 1.4;
+	margin-bottom: 2rem;
 }

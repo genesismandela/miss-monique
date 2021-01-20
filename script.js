@@ -1,42 +1,24 @@
 "use strict";
+// Initialize LAZY LOAD
+(function () {
+	// Initialize
+	var bLazy = new Blazy();
+})();
+
 ///////////////
 // HEADER BACKGROUND SLIDER
 
 // Header Object
 const header = document.querySelector(".header");
 
-// // Image List
-// const images = [];
-// images[0] = `url(../img/miss_monique_background_1.jpg)`;
-// images[1] = `url(../img/miss_monique_background_2.jpg)`;
-// images[2] = `url(../img/miss_monique_background_3.jpg)`;
-
-// // Image Counter
-// let i = 0;
-
-// // Function Declaration
-// function changeBackground() {
-// 	header.style.backgroundImage = images[i];
-
-// 	if (i < images.length - 1) {
-// 		i++;
-// 	} else {
-// 		i = 0;
-// 	}
-
-// 	setTimeout("changeBackground()", 7500);
-// }
-// // Call function when page is loaded
-// window.onload = changeBackground;
-
 // Loader Animation
-const loader = document.querySelector(".loader");
+// const loader = document.querySelector(".loader");
 
-window.addEventListener("load", function () {
-	setTimeout(function () {
-		loader.style.display = "none";
-	}, 5000);
-});
+// window.addEventListener("load", function () {
+// 	setTimeout(function () {
+// 		loader.style.display = "none";
+// 	}, 5000);
+// });
 
 // ///////////////
 // // HEADER NAVIGATION BURGER
@@ -91,9 +73,9 @@ btnShowHideSongs.addEventListener("click", function () {
 
 		btnShowHideSongs.textContent = "Show more";
 	} else {
-		hideSongs[0].style.display = "block";
-		hideSongs[1].style.display = "block";
-		hideSongs[2].style.display = "block";
+		hideSongs[0].style.display = "grid";
+		hideSongs[1].style.display = "grid";
+		hideSongs[2].style.display = "grid";
 
 		btnShowHideSongs.textContent = "Show less";
 	}

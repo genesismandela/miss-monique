@@ -1,12 +1,7 @@
 .gallery {
 	display: flex;
 	flex-direction: column;
-
-	padding: 15rem 0.5rem;
-
-	> .heading-2 {
-		padding: 0rem 2rem;
-	}
+	background-color: $dark;
 
 	&__pics {
 		display: grid;

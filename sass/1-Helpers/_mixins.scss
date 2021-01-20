@@ -1,7 +1,8 @@
-@mixin FlexColCenter {
+@mixin flex($direction, $justify, $align) {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
 }
 
 @mixin FlexWrap {

@@ -1,5 +1,5 @@
 .records {
-	padding: 15rem 0.5rem;
+	@extend %containerPadding;
 	width: 100%;
 
 	display: flex;
@@ -10,10 +10,6 @@
 	&__container {
 		max-width: 1350px;
 		margin: 0 auto;
-
-		.heading-2 {
-			margin: 0 0.75rem;
-		}
 	}
 
 	&__singles {
@@ -37,22 +33,11 @@
 
 	&__single {
 		position: relative;
-		opacity: 0.5;
-		cursor: pointer;
 
-		transition: all 1s;
-
-		display: flex;
-		justify-content: center;
-
-		&:hover {
-			opacity: 1;
-
-			// .heading-4 {
-			// 	opacity: 1;
-			// 	animation: dropUp 1s ease-in forwards;
-			// }
-		}
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-gap: 1rem;
 
 		@media only screen and (max-width: 600px) {
 			&:nth-child(4),
@@ -62,65 +47,59 @@
 			}
 		}
 
-		.heading-4 {
-			position: absolute;
-			bottom: -10%;
-			@include fluid-font(18px, 24px);
-			z-index: 9999;
-			color: $color-white;
-			opacity: 0;
-			text-shadow: 1px 1px $light-dark;
+		&__number {
+			grid-column: 1/1;
+			grid-row: 1/1;
 
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				top: 50%;
-				height: 2px;
-				width: 2rem;
-				background-color: $light;
-			}
-
-			&::before {
-				left: 0%;
-				transform: translate(-100%, -50%);
-			}
-			&::after {
-				right: 0%;
-				transform: translate(100%, -50%);
-			}
+			font-size: 3rem;
+			font-family: $font-complement;
+			color: $dark;
+			font-weight: bold;
+			align-self: end;
 		}
 
-		&__link {
-			opacity: 0.4;
+		&__img {
+			border-radius: 5px;
+
+			grid-column: 1/4;
+			grid-row: 2/-1;
+		}
+
+		&__play {
+			grid-column: 2/3;
+			grid-row: 3/4;
+
+			border: 5px solid $light;
+			border-radius: 50px;
+			position: relative;
+			opacity: 0.5;
+			cursor: pointer;
 
 			&:hover {
 				opacity: 1;
 			}
-			&--1 {
-				position: absolute;
-				left: 0.5rem;
-				bottom: 0.5rem;
-				width: 20%;
-			}
 
-			&--2 {
+			&__btn {
+				background-color: $light;
+				clip-path: polygon(70% 50%, 35% 30%, 35% 70%);
+				width: 100%;
+				height: 100%;
 				position: absolute;
-				right: 0.5rem;
-				bottom: 0.5rem;
-				width: 20%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 		}
 
-		&:hover {
-			opacity: 1;
+		&__heading-4 {
+			grid-column: 4/6;
+			grid-row: 4/5;
+			@include fluid-font(18px, 24px);
+			font-family: $font-complement;
+			color: $red-light;
+			align-self: center;
+			text-shadow: 1px 1px $light-dark;
 		}
-	}
-
-	&__img {
-		border-radius: 5px;
-		max-width: 30rem;
-		max-height: 30rem;
 	}
 
 	&__btn-show-more {
