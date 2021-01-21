@@ -1,58 +1,51 @@
 "use strict";
-
-///////////////
-// HEADER BACKGROUND SLIDER
-
-// Header Object
-const header = document.querySelector(".header");
-
+// ///////////////////////////////////////////////////////////////////////////
 // Loader Animation
-// const loader = document.querySelector(".loader");
+const loader = document.querySelector(".loader");
+// Remove loader after page is loaded
+window.addEventListener("load", function () {
+	setTimeout(function () {
+		loader.style.display = "none";
+	}, 1000);
+});
 
-// window.addEventListener("load", function () {
-// 	setTimeout(function () {
-// 		loader.style.display = "none";
-// 	}, 5000);
-// });
+// ///////////////////////////////////////////////////////////////////////////
+// Navigation Menu
+const burger = document.querySelector(".hamburger"); // Select Burger
+const navMenu = document.querySelector(".header__navigation__list"); // Select Navigation Menu
+const navLink = document.querySelectorAll(".header__navigation__link"); // Select Navigation Links
+const body = document.body; // Select BODY element
+const windowWidth = window.innerWidth; // Create variable with the page width
 
-// ///////////////
-// // HEADER NAVIGATION BURGER
-const openNavMenu = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".header__navigation__list");
-const navLink = document.querySelectorAll(".header__navigation__link");
-
-const windowWidth = window.innerWidth;
-
+// Create a function to close the 'navMenu' when any 'navLink' is clicked (for phone and tablet)
 const NavMenuPhones = function () {
 	if (windowWidth <= 768) {
-		navLink.forEach(function (item, idk) {
+		navLink.forEach(function (item, i) {
 			item.addEventListener("click", function () {
-				navMenu.style.visibility = "hidden";
-				openNavMenu.classList.toggle("is-active");
-				console.log("btn clicked");
+				navMenu.style.visibility = "hidden"; // Close Menu
+				body.style.overflow = "scroll"; // Make body scroll again (default)
+				burger.classList.toggle("is-active");
 			});
 		});
 	}
 };
 NavMenuPhones();
 
-const body = document.body;
-
-openNavMenu.addEventListener("click", function () {
+// Open and close navMenu when burger is clicked
+burger.addEventListener("click", function () {
 	if (navMenu.style.visibility === "visible") {
-		body.style.overflow = "scroll";
+		body.style.overflow = "scroll"; // Make body scroll again (default)
 		navMenu.style.visibility = "hidden";
-		openNavMenu.classList.toggle("is-active");
-		console.log("closed");
+		burger.classList.toggle("is-active");
 	} else {
-		body.style.overflow = "hidden";
+		body.style.overflow = "hidden"; // Make body stop scroll when 'navMenu' opened
 		navMenu.style.visibility = "visible";
-		openNavMenu.classList.toggle("is-active");
-		console.log("opened");
+		burger.classList.toggle("is-active");
 	}
 });
 
-// SHOW MORE SONGS
+// ///////////////////////////////////////////////////////////////////////////
+// Show and hide songs when btn is clicked
 // Array with hided songs in small screen
 const hideSongs = [
 	document.querySelector(".records__single:nth-child(4)"),
@@ -61,63 +54,91 @@ const hideSongs = [
 ];
 
 // Btn to show and hide songs
-const btnShowHideSongs = document.querySelector(".records__btn-show-more");
+const btnMoreLess = document.querySelector(".records__btn-show-more");
 
-// Event to show and hide songs
-btnShowHideSongs.addEventListener("click", function () {
-	if (btnShowHideSongs.textContent === "Show less") {
-		hideSongs[0].style.display = "none";
-		hideSongs[1].style.display = "none";
-		hideSongs[2].style.display = "none";
-
-		btnShowHideSongs.textContent = "Show more";
+// Event to show and hide songs when btn is clicked
+btnMoreLess.addEventListener("click", function () {
+	if (btnMoreLess.textContent === "Show less") {
+		// hideSongs[0].style.display = "none";
+		// hideSongs[1].style.display = "none";
+		// hideSongs[2].style.display = "none";
+		hideSongs.forEach((item, i) => (item.style.display = "none")); // For each loop to make it easy
+		btnMoreLess.textContent = "Show more";
 	} else {
-		hideSongs[0].style.display = "grid";
-		hideSongs[1].style.display = "grid";
-		hideSongs[2].style.display = "grid";
-
-		btnShowHideSongs.textContent = "Show less";
+		// hideSongs[0].style.display = "grid";
+		// hideSongs[1].style.display = "grid";
+		// hideSongs[2].style.display = "grid";
+		hideSongs.forEach((item, i) => (item.style.display = "grid")); // For each loop to make it easy
+		btnMoreLess.textContent = "Show less";
 	}
 });
 
-const videoSlider = document.querySelector(".mimo-podcast__youtube__slider"); // Variable with the video slider
+// ///////////////////////////////////////////////////////////////////////////
+// Youtube Video Slider
+const videoSlider = document.querySelector(".mimo-podcast__youtube__slider"); // Select video slider
 const videoSlides = document.querySelectorAll(
 	".mimo-podcast__youtube__slider__video",
-); // Variable with the video slides
-
-// GO BACK & NEXT ARROWS
-const goBack = document.querySelector(".mimo-podcast__youtube__nav__btn--back");
-const goNext = document.querySelector(".mimo-podcast__youtube__nav__btn--next");
-
-const mimoTitle = document.querySelector(".mimo-podcast__youtube__title");
+); // Select video slides
+const goBack = document.querySelector(".mimo-podcast__youtube__nav__btn--back"); // Select back arrow
+const goNext = document.querySelector(".mimo-podcast__youtube__nav__btn--next"); // Select next arrow
+const mimoTitle = document.querySelector(".mimo-podcast__youtube__title"); // Select MiMo Heading
+const ballBox = document.querySelector(".mimo-podcast__youtube__nav__balls"); // Select Ball Box
 
 let currentSlide = 0;
 const maxSlide = videoSlides.length;
 
+// Create a function that translateX every video
 const goToSlide = function (slide) {
 	videoSlides.forEach(
 		(s, i) => (s.style.transform = `translateX(${150 * (i - slide)}%`),
 	);
 };
 
-const ballBox = document.querySelector(".mimo-podcast__youtube__nav__balls");
-
+// Create BallDots for every video
 const createBalls = function (slide) {
 	videoSlides.forEach(function (s, i) {
 		const ball = `<button class="ball ball-active" data-slide="${i}"></button>`;
-
-		ballBox.insertAdjacentHTML("afterbegin", ball);
+		ballBox.insertAdjacentHTML("afterbegin", ball); // Every dot is inserted inside the ball-box
 	});
 };
 
+// Depend on current slide one of the balls will be activated
 const activateBall = function (slide) {
 	document
 		.querySelectorAll(".ball")
-		.forEach((ball) => ball.classList.remove("ball-active"));
+		.forEach((ball) => ball.classList.remove("ball-active")); // First remove active from all balls
 
 	document
 		.querySelector(`.ball[data-slide="${slide}"]`)
-		.classList.add("ball-active");
+		.classList.add("ball-active"); // And add active to the current slide
+};
+
+// Swap title for every slide
+let podcastNumber = 24;
+const swapTitle = function () {
+	mimoTitle.textContent = `Miss Monique - MiMo 0${podcastNumber}`; // Set MiMo title
+
+	// Create a loop to change the title depending on 'currentSlide'
+	for (currentSlide; currentSlide < maxSlide; currentSlide++) {
+		return (mimoTitle.textContent = `Miss Monique - MiMo 0${
+			podcastNumber - currentSlide
+		}`);
+	}
+	// Easier than IF/ELSE statement
+	// if (currentSlide === 0) {
+	// 	mimoTitle.textContent = `Miss Monique - MiMo 0${
+	// 		podcastNumber - currentSlide
+	// 	}`;
+	// } else if (currentSlide === 1) {
+	// 	mimoTitle.textContent = `Miss Monique - MiMo 0${
+	// 		podcastNumber - currentSlide
+	// 	}`;
+	// } else if (currentSlide === 2) {
+	// 	mimoTitle.textContent = `Miss Monique - MiMo 0${
+	// 		podcastNumber - currentSlide
+	// 	}`;
+	// }
+	// goToSlide(currentSlide);
 };
 
 // Function to make the Right Arrow work to slide between videos
@@ -144,25 +165,14 @@ const prevSlide = function () {
 	swapTitle();
 };
 
-let podcastNumber = 24;
-
-const swapTitle = function () {
-	if (currentSlide === 0) {
-		mimoTitle.textContent = "Miss Monique - MiMo 024";
-	} else if (currentSlide === 1) {
-		mimoTitle.textContent = "Miss Monique - MiMo 023";
-	} else if (currentSlide === 2) {
-		mimoTitle.textContent = "Miss Monique - MiMo 022";
-	}
-	goToSlide(currentSlide);
-};
-
 goNext.addEventListener("click", nextSlide);
 goBack.addEventListener("click", prevSlide);
 
+// Initialize all functions
 const init = function () {
 	goToSlide(0);
 	createBalls();
 	activateBall(0);
+	swapTitle();
 };
 init();
