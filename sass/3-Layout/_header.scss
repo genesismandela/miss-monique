@@ -89,7 +89,7 @@
 			font-family: $font-main;
 			color: $light;
 			text-decoration: none;
-			padding: 1rem;
+			padding-bottom: 0.5rem;
 
 			border-bottom: 1px solid $green-light;
 			border-bottom-width: 0;
@@ -102,7 +102,7 @@
 				left: 0;
 				width: 0;
 				height: 2px;
-				background-color: $green-light !important;
+				background-color: $light-dark !important;
 			}
 			&:hover {
 				color: $light-dark;

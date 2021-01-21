@@ -1,0 +1,81 @@
+.footer * {
+	color: $light;
+}
+
+.heading-5 {
+	@include fluid-font(18px, 24px);
+	color: $light-dark;
+	font-family: $font-main;
+	padding-bottom: 0.5rem;
+	position: relative;
+	margin-bottom: 1.2rem;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 0.2rem;
+		background-color: $light-dark;
+		max-width: 600px;
+		width: 90%;
+	}
+}
+
+.footer {
+	background-color: $dark;
+
+	&__wrapper {
+		display: grid;
+		grid-template-rows: repeat(4, min-content);
+		padding: 3rem;
+	}
+
+	article {
+		margin-bottom: 2rem;
+	}
+
+	&__logo {
+		grid-row: 1/2;
+		background-color: $light;
+		margin-bottom: 5rem;
+		width: 40%;
+	}
+
+	&__support {
+		grid-row: 2/3;
+	}
+
+	&__community {
+		grid-row: 3/4;
+		padding-bottom: 5rem;
+	}
+
+	&__creator {
+		grid-row: 4/5;
+	}
+
+	&__media-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		@include fluid-font(15px, 20px);
+		font-family: $font-second;
+		list-style: none;
+		padding: 1rem;
+	}
+
+	&__link {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+		margin: auto;
+	}
+}

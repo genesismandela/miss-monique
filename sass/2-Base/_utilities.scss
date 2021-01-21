@@ -2,19 +2,11 @@
 %alignCenter {
 	text-align: center;
 }
-.alignCenter {
+.tac {
 	text-align: center;
 }
 .alignLeft {
 	text-align: left;
-}
-
-// Effects for links
-%infolinks {
-	text-decoration: none;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
-	padding-bottom: 2px;
 }
 
 // // Text Shadow
@@ -30,17 +22,6 @@
 // %boxShadowWhite {
 //     box-shadow: 1px 1px 2px $color-black, 0 0 25px $color-home-white;
 // }
-
-// Text Align
-%alignCenter {
-	text-align: center;
-}
-.alignCenter {
-	text-align: center;
-}
-.alignLeft {
-	text-align: left;
-}
 
 // Flex Column
 %FlexCol {
