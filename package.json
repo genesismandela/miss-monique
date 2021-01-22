@@ -8,7 +8,7 @@
     "devserver": "live-server --browser=firefox",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass sass/main.scss css/style.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "compress:css": "node-sass css/style.css css/min.css --output-style compressed",
     "build-css": "node-sass --include-path scss sass/main.scss   css/style.min.css --output-style compressed"
   },
   "repository": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "blazy": "^1.8.2",
     "hamburgers": "^1.1.3",
+    "javascript-minifier": "^1.1.0",
     "sass": "^1.32.4"
   }
 }
