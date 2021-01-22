@@ -6,7 +6,7 @@ const loader = document.querySelector(".loader");
 window.addEventListener("load", function () {
 	setTimeout(function () {
 		loader.style.display = "none";
-	}, 500);
+	}, 1000);
 });
 
 // ///////////////////////////////////////////////////////////////////////////
