@@ -53,6 +53,27 @@
 	letter-spacing: 1.6px;
 }
 
+// Footer Headings
+.heading-5 {
+	@include fluid-font(18px, 24px);
+	color: $light-dark;
+	font-family: $font-main;
+	padding-bottom: 0.5rem;
+	position: relative;
+	margin-bottom: 1.2rem;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 0.2rem;
+		background-color: $light-dark;
+		max-width: 600px;
+		width: 90%;
+	}
+}
+
 // Normal Text
 .text {
 	@include fluid-font(16px, 24px);

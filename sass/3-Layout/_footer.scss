@@ -2,28 +2,29 @@
 	color: $light;
 }
 
-.heading-5 {
-	@include fluid-font(18px, 24px);
-	color: $light-dark;
-	font-family: $font-main;
-	padding-bottom: 0.5rem;
-	position: relative;
-	margin-bottom: 1.2rem;
-
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		height: 0.2rem;
-		background-color: $light-dark;
-		max-width: 600px;
-		width: 90%;
-	}
-}
-
 .footer {
 	background-color: $dark;
+
+	.hover {
+		display: inline-block;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 1px;
+			background-color: $light;
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
 
 	&__wrapper {
 		display: grid;
@@ -71,6 +72,7 @@
 		text-decoration: none;
 		display: flex;
 		align-items: center;
+		padding-bottom: 0.5rem;
 	}
 
 	&__icon {

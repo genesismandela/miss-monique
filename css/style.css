@@ -44,7 +44,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  background-color: #e4e4e4; }
+  background-color: #e4e4e4;
+  scroll-behavior: smooth; }
 
 .max-width {
   max-width: 1440px;
@@ -112,30 +113,6 @@ img {
     .heading-4 {
       font-size: 30px; } }
 
-.text {
-  font-size: 24px;
-  font-size: calc( 16px + (24 - 16) * ((100vw - 320px) / (1600 - 320)));
-  color: #e4e4e4;
-  font-family: "Nanum Gothic Coding", monospace;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-  max-width: 75rem; }
-  @media screen and (max-width: 320px) {
-    .text {
-      font-size: 16px; } }
-  @media screen and (min-width: 1600px) {
-    .text {
-      font-size: 24px; } }
-
-.tac {
-  text-align: center; }
-
-.alignLeft {
-  text-align: left; }
-
-.footer * {
-  color: #e4e4e4; }
-
 .heading-5 {
   font-size: 24px;
   font-size: calc( 18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
@@ -160,8 +137,45 @@ img {
     max-width: 600px;
     width: 90%; }
 
+.text {
+  font-size: 24px;
+  font-size: calc( 16px + (24 - 16) * ((100vw - 320px) / (1600 - 320)));
+  color: #e4e4e4;
+  font-family: "Nanum Gothic Coding", monospace;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  max-width: 75rem; }
+  @media screen and (max-width: 320px) {
+    .text {
+      font-size: 16px; } }
+  @media screen and (min-width: 1600px) {
+    .text {
+      font-size: 24px; } }
+
+.tac {
+  text-align: center; }
+
+.alignLeft {
+  text-align: left; }
+
+.footer * {
+  color: #e4e4e4; }
+
 .footer {
   background-color: #0e1417; }
+  .footer .hover {
+    display: inline-block;
+    position: relative; }
+    .footer .hover::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #e4e4e4; }
+    .footer .hover:hover::after {
+      width: 100%; }
   .footer__wrapper {
     display: grid;
     grid-template-rows: repeat(4, min-content);
@@ -198,7 +212,8 @@ img {
   .footer__link {
     text-decoration: none;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding-bottom: 0.5rem; }
   .footer__icon {
     width: 2rem;
     height: 2rem;
@@ -509,6 +524,8 @@ img {
       line-height: 5rem;
       width: 15rem;
       text-decoration: none; }
+      .mimo-podcast__youtube__link:hover {
+        font-weight: bold; }
 
 .records {
   width: 100%;

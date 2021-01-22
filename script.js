@@ -114,7 +114,7 @@ const activateBall = function (slide) {
 };
 
 // Swap title for every slide
-let podcastNumber = 24;
+let podcastNumber = 25;
 const swapTitle = function () {
 	mimoTitle.textContent = `Miss Monique - MiMo 0${podcastNumber}`; // Set MiMo title
 

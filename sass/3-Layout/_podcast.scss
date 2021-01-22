@@ -147,6 +147,10 @@
 			width: 15rem;
 
 			text-decoration: none;
+
+			&:hover {
+				font-weight: bold;
+			}
 		}
 	}
 }
