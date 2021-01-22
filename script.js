@@ -176,3 +176,13 @@ const init = function () {
 	swapTitle();
 };
 init();
+
+// ///////////////////////////////////////////////////////////////////////////
+// Gallery hearts fill color
+const hearts = document.querySelectorAll(".gallery__icon");
+
+hearts.forEach((heart, i) => {
+	heart.addEventListener("click", function () {
+		this.classList.toggle("active-heart");
+	});
+});
